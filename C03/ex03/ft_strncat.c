@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sfelici <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: fmontini <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/23 14:48:51 by sfelici           #+#    #+#             */
-/*   Updated: 2024/09/24 17:42:43 by sfelici          ###   ########.fr       */
+/*   Created: 2024/10/01 10:22:37 by fmontini          #+#    #+#             */
+/*   Updated: 2024/10/01 10:23:53 by fmontini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
-	unsigned int	i;
-	char			*d;
+	unsigned int	d;
+	unsigned int	s;
 
-	d = dest;
-	i = 0;
-	while (*src && i < n)
+	d = 0;
+	s = 0;
+	while (dest[d] != '\0')
 	{
-		*dest++ = *src++;
-		i++;
+		d++;
 	}
-	while (i < n)
+	while ((src[s] != '\0') && (s < nb))
 	{
-		*dest++ = '\0';
-		i++;
+		dest[d] = src[s];
+		d++;
+		s++;
 	}
-	return (d);
+	dest[d] = '\0';
+	return (dest);
 }

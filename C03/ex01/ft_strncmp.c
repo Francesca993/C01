@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sfelici <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: fmontini <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/23 14:57:19 by sfelici           #+#    #+#             */
-/*   Updated: 2024/09/24 18:08:51 by sfelici          ###   ########.fr       */
+/*   Created: 2024/10/01 09:09:19 by fmontini          #+#    #+#             */
+/*   Updated: 2024/10/01 09:21:15 by fmontini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_printable(char *str)
+int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	if (*str == '\0')
+	unsigned int	i;
+
+	i = 0;
+	while ((i < n) && (s1[i] != '\0') && (s2[i] != '\0'))
 	{
-		return (1);
-	}
-	while (*str)
-	{
-		if (!(*str >= ' ' && *str <= '~'))
+		if (s1[i] != s2[i])
 		{
-			return (0);
+			return (s1[i] - s2[i]);
 		}
-		str++;
+		i++;
 	}
-	return (1);
+	if (i < n)
+	{
+		return (s1[i] - s2[i]);
+	}
+	return (0);
 }

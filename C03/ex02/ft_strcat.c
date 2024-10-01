@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sfelici <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: fmontini <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/23 15:06:16 by sfelici           #+#    #+#             */
-/*   Updated: 2024/09/24 18:17:06 by sfelici          ###   ########.fr       */
+/*   Created: 2024/10/01 10:11:11 by fmontini          #+#    #+#             */
+/*   Updated: 2024/10/01 10:12:33 by fmontini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strlowcase(char *str)
+char	*ft_strcat(char *dest, char *src)
 {
-	char	*d;
+	int	d;
+	int	s;
 
-	d = str;
-	while (*str)
+	d = 0;
+	s = 0;
+	while (dest[d] != '\0')
 	{
-		if (*str >= 'A' && *str <= 'Z')
-		{
-			*str = *str + 32;
-		}
-		str++;
+		d++;
 	}
-	return (d);
+	while (src[s] != '\0')
+	{
+		dest[d] = src[s];
+		d++;
+		s++;
+	}
+	dest[d] = '\0';
+	return (dest);
 }

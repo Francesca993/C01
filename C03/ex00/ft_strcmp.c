@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sfelici <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: fmontini <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/23 14:45:33 by sfelici           #+#    #+#             */
-/*   Updated: 2024/09/25 09:29:25 by sfelici          ###   ########.fr       */
+/*   Created: 2024/09/30 17:26:23 by fmontini          #+#    #+#             */
+/*   Updated: 2024/09/30 18:17:55 by fmontini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-char	*ft_strcpy(char *dest, char *src)
+int	ft_strcmp(char *s1, char *s2)
 {
-	char	*n;
+	int	i;
 
-	n = dest;
-	while (*src != '\0')
+	i = 0;
+	while ((s1[i] != '\0') && (s2[i] != '\0') && (s1[i] == s2[i]))
 	{
-		*dest = *src;
-		src++;
-		dest++;
+		i++;
 	}
-	*dest = '\0';
-	dest = n;
-	return (dest);
+	return (s1[i] - s2[i]);
 }

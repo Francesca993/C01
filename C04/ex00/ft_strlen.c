@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strupcase.c                                     :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sfelici <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: fmontini <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/23 15:03:58 by sfelici           #+#    #+#             */
-/*   Updated: 2024/09/24 18:16:51 by sfelici          ###   ########.fr       */
+/*   Created: 2024/10/01 11:58:11 by fmontini          #+#    #+#             */
+/*   Updated: 2024/10/01 11:58:13 by fmontini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strupcase(char *str)
+int ft_strlen(char *str)
 {
-	char	*d;
+	int	i;
 
-	d = str;
-	while (*str)
+	i = 0;
+	while (str[i] != '\0')
 	{
-		if (*str >= 'a' && *str <= 'z')
-		{
-			*str = *str - 32;
-		}
-		str++;
+		i++;
 	}
-	return (d);
+	return (i);
 }
