@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fmontini <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/01 11:58:11 by fmontini          #+#    #+#             */
-/*   Updated: 2024/10/01 11:58:13 by fmontini         ###   ########.fr       */
+/*   Created: 2024/10/07 08:37:33 by fmontini          #+#    #+#             */
+/*   Updated: 2024/10/07 08:46:54 by fmontini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strlen(char *str)
+int	ft_strlen(char *str)
 {
 	int	i;
 
